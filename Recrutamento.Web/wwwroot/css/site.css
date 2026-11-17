@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #17243b; background: #f3f6fa; line-height: 1.5; }
+.container { width: min(100% - 2rem, 56rem); margin: auto; }
+header { background: #183961; padding: 1rem 0; }
+header a { color: white; text-decoration: none; font-weight: 700; }
+main { padding: 1rem 0 3rem; }
+section { background: white; border: 1px solid #d6deea; border-radius: .5rem; padding: 1.5rem; margin-top: 1.5rem; }
+h1, h2, h3 { line-height: 1.2; }
+form { display: grid; gap: .5rem; }
+label { font-weight: 600; margin-top: .5rem; }
+input, textarea, button { font: inherit; padding: .6rem; border-radius: .3rem; }
+input, textarea { width: 100%; border: 1px solid #8593a6; }
+button { justify-self: start; color: white; background: #183961; border: 0; cursor: pointer; margin-top: .75rem; }
+article { border-top: 1px solid #d6deea; overflow-wrap: anywhere; }
+.validation { color: #a31818; }
+.validation:empty { display: none; }
+.success { color: #146334; }

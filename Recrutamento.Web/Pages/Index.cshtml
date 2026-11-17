@@ -1,0 +1,49 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Candidaturas";
+}
+
+<h1>Recrutamento de candidatos</h1>
+<p>Cadastre candidaturas e acompanhe os perfis recebidos.</p>
+
+@if (Model.Message is not null)
+{
+    <p class="success" role="status">@Model.Message</p>
+}
+
+<section>
+    <h2>Nova candidatura</h2>
+    <form method="post">
+        <div asp-validation-summary="All" class="validation"></div>
+        <label asp-for="Candidate.Name"></label>
+        <input asp-for="Candidate.Name" maxlength="100" />
+        <label asp-for="Candidate.Email"></label>
+        <input asp-for="Candidate.Email" type="email" maxlength="254" />
+        <label asp-for="Candidate.Role"></label>
+        <input asp-for="Candidate.Role" maxlength="100" />
+        <label asp-for="Candidate.Experience"></label>
+        <textarea asp-for="Candidate.Experience" maxlength="2000" rows="4"></textarea>
+        <button type="submit">Cadastrar candidatura</button>
+    </form>
+</section>
+
+<section>
+    <h2>Candidaturas recebidas</h2>
+    @if (Model.Candidates.Count == 0)
+    {
+        <p>Nenhuma candidatura cadastrada ainda.</p>
+    }
+    else
+    {
+        @foreach (var candidate in Model.Candidates)
+        {
+            <article>
+                <h3>@candidate.Name</h3>
+                <p><strong>Vaga:</strong> @candidate.Role</p>
+                <p><strong>E-mail:</strong> @candidate.Email</p>
+                <p><strong>Experiência:</strong> @candidate.Experience</p>
+            </article>
+        }
+    }
+</section>
