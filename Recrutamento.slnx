@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Recrutamento.AppHost/Recrutamento.AppHost.csproj" />
+  <Project Path="Recrutamento.Web/Recrutamento.Web.csproj" />
+</Solution>
